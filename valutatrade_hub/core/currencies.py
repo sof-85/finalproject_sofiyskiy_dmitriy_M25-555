@@ -6,6 +6,7 @@ from .exceptions import CurrencyNotFoundError
 
 
 class Currency(ABC):
+    '''Базовый класс для валют'''
     def __init__(self, name: str, code: str):
         if not name:
             raise ValueError("Имя не может быть пустым")
@@ -20,9 +21,7 @@ class Currency(ABC):
         pass
 
 class FiatCurrency(Currency):
-    '''
-    Государственные валюты
-    '''
+    '''Фиатные валюты'''
     def __init__(self, name, code, issuing_country):
         super().__init__(name, code)
         self.issuing_country = issuing_country
@@ -31,9 +30,7 @@ class FiatCurrency(Currency):
         return f"[FIAT] {self.code} — {self.name} (Issuing: {self.issuing_country})"
 
 class CryptoCurrency(Currency):
-    '''
-    Крипто-валюты
-    '''
+    '''Криптовалюты'''
     def __init__(self, name, code, algorithm, market_cap):
         super().__init__(name, code)
         self.algorithm = algorithm
