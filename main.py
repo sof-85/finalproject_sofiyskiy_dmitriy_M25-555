@@ -3,13 +3,9 @@
 from valutatrade_hub.cli.interface import CLI
 from valutatrade_hub.core.utils import ensure_data_files
 
-
 def main():
-    '''
-    Точка входа программы
-    '''
+    '''Точка входа'''
     ensure_data_files()
-    
     app = CLI()
     app.run()
 
