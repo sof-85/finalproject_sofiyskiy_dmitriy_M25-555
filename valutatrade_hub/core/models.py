@@ -1,21 +1,21 @@
 # valutatrade_hub/core/models.py
-
+import hashlib
 import datetime
-import uuid
+#import uuid
 
 from .utils import hash_password
 
 
 class User:
-    '''
-    Класс "пользователь системы"
-    '''
+    ''' Пользователь системы   '''
+    
     def __init__(self, user_id, username, password=None, hashed_password=None, salt=None, registration_date=None):
         self._user_id = user_id
         self._username = username
         
         if password and not hashed_password:
-            self._salt = uuid.uuid4().hex
+            #self._salt = uuid.uuid4().hex
+            self._salt = hashlib.sha256().hexdigest()
             self.password = password 
 
         else:
@@ -41,7 +41,7 @@ class User:
     @username.setter
     def username(self, value):
         if not value:
-            raise ValueError("Имя пользователя не может быть пустым")
+            raise ValueError("Имя не может быть пустым")
         self._username = value
 
     @property
@@ -91,9 +91,7 @@ class User:
 
 
 class Wallet:
-    '''
-    Класс "Кошелёк пользователя для одной конкретной валюты"
-    '''
+    '''Кошелёк пользователя для одной конкретной валюты'''
     def __init__(self, currency_code: str, balance: float = 0.0):
         self.currency_code = currency_code.upper()
         self._balance = float(balance)
@@ -112,14 +110,14 @@ class Wallet:
 
     def deposit(self, amount: float):
         if amount <= 0:
-            raise ValueError("Сумма пополнения должна быть положительной")
+            raise ValueError("Сумма снятия не может быть отрицательной или нулевой")
         self.balance += amount
 
     def withdraw(self, amount: float):
         if amount <= 0:
-            raise ValueError("Сумма снятия должна быть положительной")
+            raise ValueError("Сумма снятия не может быть отрицательной или нулевой")
         if amount > self._balance:
-            raise ValueError(f"Недостаточно средств. Доступно: {self._balance}")
+            raise ValueError(f"Сумма снятия превышает баланс. Доступно: {self._balance}")
         self.balance -= amount
 
     def get_balance_info(self):
@@ -130,9 +128,7 @@ class Wallet:
 
 
 class Portfolio:
-    '''
-    Класс "Управление всеми кошельками одного пользователя"
-    '''
+    ''' Управление всеми кошельками одного пользователя'''
     def __init__(self, user_id: int, wallets_data: dict = None):
         self._user_id = user_id
         self._wallets = {}

@@ -15,9 +15,7 @@ class SystemCore:
 
     @log_action("REGISTER")
     def register_user(self, username, password):
-        '''
-        Функция для регистрации нового пользователя
-        '''
+        ''' Функция регистрации нового пользователя '''
         users_file = self.settings.get('users_file', 'users.json')
         users_data = self.db.load(users_file)
         
@@ -50,9 +48,7 @@ class SystemCore:
 
     @log_action("LOGIN")
     def login_user(self, username, password):
-        '''
-        Функция авторизации пользователя
-        '''
+        '''  Функция авторизации пользователя  '''
         users_file = self.settings.get('users_file', 'users.json')
         users_data = self.db.load(users_file)
         user_dict = next((u for u in users_data if u['username'] == username), None)
@@ -67,9 +63,7 @@ class SystemCore:
             raise ValueError("Неверный пароль")
 
     def get_portfolio(self, user_id):
-        '''
-        Функция для просмотра портфолио
-        '''
+        '''  Функция для просмотра портфолио '''
         portfolios_file = self.settings.get('portfolio_file', 'portfolios.json')
         data = self.db.load(portfolios_file)
         p_data = next((p for p in data if p['user_id'] == user_id), None)
@@ -78,9 +72,7 @@ class SystemCore:
         return Portfolio(p_data['user_id'], p_data['wallets'])
 
     def save_portfolio(self, portfolio: Portfolio):
-        '''
-        Функция сохранения портфолио
-        '''
+        ''' Функция сохранения портфолио '''
         portfolios_file = self.settings.get('portfolio_file', 'portfolios.json')
         data = self.db.load(portfolios_file)
         for i, p in enumerate(data):
@@ -92,9 +84,7 @@ class SystemCore:
         self.db.save(portfolios_file, data)
 
     def get_rates(self):
-        '''
-        Функция получения оценок 
-        '''
+        ''' Функция получения курсов '''
         rates_file = self.settings.get('rates_file', 'rates.json')
         data = self.db.load(rates_file)
         if "pairs" in data:
@@ -102,9 +92,7 @@ class SystemCore:
         return data
 
     def get_rate(self, from_curr, to_curr):
-        '''
-        Функция получения оценки
-        '''
+        '''Функция получения курса '''
         get_currency(from_curr)
         get_currency(to_curr)
 
@@ -122,9 +110,7 @@ class SystemCore:
 
     @log_action("BUY")
     def buy_currency(self, user: User, currency_code: str, amount: float):
-        '''
-        Функция для покупки валюты за USD
-        '''
+        '''Функция покупки валюты за USD'''
         if amount <= 0:
             raise ValueError("Количество должно быть положительным")
         
@@ -163,9 +149,7 @@ class SystemCore:
 
     @log_action("SELL")
     def sell_currency(self, user: User, currency_code: str, amount: float):
-        '''
-        Функция для продажи валюты за USD.
-        '''
+        '''Функция продажи валюты за USD'''
         if amount <= 0:
             raise ValueError("Количество должно быть положительным")
         

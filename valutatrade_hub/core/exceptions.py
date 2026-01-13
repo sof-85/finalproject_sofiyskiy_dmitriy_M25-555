@@ -1,9 +1,7 @@
 # valutatrade_hub/core/exceptions.py
 
 class ValutaTradeError(Exception):
-    '''
-    Базовое исключение
-    '''
+    ''' Базовые исключения '''
     pass
 
 class InsufficientFundsError(ValutaTradeError):
@@ -14,17 +12,13 @@ class InsufficientFundsError(ValutaTradeError):
         super().__init__(f"Недостаточно средств: доступно {available:.4f} {code}, требуется {required:.4f} {code}")
 
 class CurrencyNotFoundError(ValutaTradeError):
-    '''
-    Исключение не найденной валюты
-    '''
+    '''Валюта не найдена'''
     def __init__(self, code):
         self.code = code
         super().__init__(f"Неизвестная валюта '{code}'")
 
 class ApiRequestError(ValutaTradeError):
-    '''
-    Исключение ошибки при обращении к неизвестному API
-    '''
+    '''Обращение к неизвестному API'''
     def __init__(self, reason):
         self.reason = reason
         super().__init__(f"Ошибка при обращении к внешнему API: {reason}")
