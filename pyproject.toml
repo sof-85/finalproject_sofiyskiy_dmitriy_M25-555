@@ -1,27 +1,15 @@
-[project]
-name = "finalproject-sofiyskiy-dmitriy-m25-555"
+[tool.poetry]
+name = "finalproject_sofiyskiy_dmitriy_M25-555"
 version = "0.1.0"
 description = ""
-authors = [{name = "Dmitry Sofiyskiy", email = "sof-85@mail.ru"}]
-
+authors = ["Dmitry Sofiyskiy <sof-85@mail.ru>"]
 readme = "README.md"
-requires-python = ">=3.13"
-
-[tool.poetry.dependencies]
-requests = "^2.32.5"
-python-dotenv = "^1.2.1"
-
-[tool.poetry]
-packages = [{include = "finalproject_sofoiskiy_dmitriy_m25_555"}]
-
-[tool.poetry.scripts]
-project = "main:main"
-
-[tool.poetry.group.dev.dependencies]
-ruff = "^0.14.11"
+packages = [
+    { include = "valutatrade_hub", from = "." }
+]
 
 [build-system]
-requires = ["poetry-core"]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
 build-backend = "poetry.core.masonry.api"
 
 [tool.ruff]
@@ -37,3 +25,4 @@ ignore = []
 rates_ttl_seconds = 600
 default_base_currency = "USD"
 data_directory = "data"
+
