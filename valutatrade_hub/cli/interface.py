@@ -14,8 +14,8 @@ class CLI:
         self.current_user = None
 
     def run(self):
-        print("=== ValutaTrade Hub v2.1 ===")
-        print("Команды: register, login, show-portfolio, buy, sell, get-rate, update-rates, show-rates, exit, help")
+        print("Программа ValutaTrade Hub запущена.")
+        print("Доступные команды: register, login, show-portfolio, buy, sell, get-rate, update-rates, show-rates, exit, help")
         
         while True:
             try:
@@ -38,7 +38,7 @@ class CLI:
                 args = parts[1:]
                 
                 if command == 'exit':
-                    print("До свидания!")
+                    print("Завершение работы")
                     break
                 elif command == 'help':
                     self.print_help()
@@ -114,7 +114,7 @@ class CLI:
         try:
             user = self.core.login_user(params['username'], params['password'])
             self.current_user = user
-            print(f"Добро пожаловать, {user.username}!")
+            print(f"{user.username} - вход выполнен")
         except ValueError as e:
             print(f"{e}")
 
@@ -167,7 +167,7 @@ class CLI:
         Обработка покупки
         '''
         if not self.current_user:
-            print("Сначала выполните login")
+            print("Войдите в систему (команда login)")
             return
 
         params = self._parse_args(args)
@@ -202,7 +202,7 @@ class CLI:
         Обработка продажи
         '''
         if not self.current_user:
-            print("Сначала выполните login")
+            print("Войдите в систему (команда login)")
             return
 
         params = self._parse_args(args)

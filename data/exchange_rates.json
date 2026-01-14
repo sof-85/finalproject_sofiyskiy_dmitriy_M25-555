@@ -1,14 +1,146 @@
-{
-  "id": "BTC_USD_2025-10-10T12:00:00Z",
-  "from_currency": "BTC",
-  "to_currency": "USD",
-  "rate": 59337.21,
-  "timestamp": "2025-10-10T12:00:00Z",
-  "source": "CoinGecko",
-  "meta": {
-    "raw_id": "bitcoin",
-    "request_ms": 124,
-    "status_code": 200,
-    "etag": "W/\"abc123\""
-  }
-}
+[
+    {
+        "id": "BTC_USD_2026-01-13T23:59:34.350424",
+        "from_currency": "BTC",
+        "to_currency": "USD",
+        "rate": 95338.0,
+        "timestamp": "2026-01-13T23:59:34.350424",
+        "source": "CoinGecko"
+    },
+    {
+        "id": "ETH_USD_2026-01-13T23:59:34.350424",
+        "from_currency": "ETH",
+        "to_currency": "USD",
+        "rate": 3322.86,
+        "timestamp": "2026-01-13T23:59:34.350424",
+        "source": "CoinGecko"
+    },
+    {
+        "id": "SOL_USD_2026-01-13T23:59:34.350424",
+        "from_currency": "SOL",
+        "to_currency": "USD",
+        "rate": 145.17,
+        "timestamp": "2026-01-13T23:59:34.350424",
+        "source": "CoinGecko"
+    },
+    {
+        "id": "BTC_USD_2026-01-14T00:00:39.731453",
+        "from_currency": "BTC",
+        "to_currency": "USD",
+        "rate": 95331.0,
+        "timestamp": "2026-01-14T00:00:39.731453",
+        "source": "CoinGecko"
+    },
+    {
+        "id": "ETH_USD_2026-01-14T00:00:39.731453",
+        "from_currency": "ETH",
+        "to_currency": "USD",
+        "rate": 3322.83,
+        "timestamp": "2026-01-14T00:00:39.731453",
+        "source": "CoinGecko"
+    },
+    {
+        "id": "SOL_USD_2026-01-14T00:00:39.731453",
+        "from_currency": "SOL",
+        "to_currency": "USD",
+        "rate": 145.17,
+        "timestamp": "2026-01-14T00:00:39.731453",
+        "source": "CoinGecko"
+    },
+    {
+        "id": "BTC_USD_2026-01-14T00:31:14.112379",
+        "from_currency": "BTC",
+        "to_currency": "USD",
+        "rate": 95411.0,
+        "timestamp": "2026-01-14T00:31:14.112379",
+        "source": "CoinGecko"
+    },
+    {
+        "id": "ETH_USD_2026-01-14T00:31:14.112379",
+        "from_currency": "ETH",
+        "to_currency": "USD",
+        "rate": 3325.0,
+        "timestamp": "2026-01-14T00:31:14.112379",
+        "source": "CoinGecko"
+    },
+    {
+        "id": "SOL_USD_2026-01-14T00:31:14.112379",
+        "from_currency": "SOL",
+        "to_currency": "USD",
+        "rate": 144.85,
+        "timestamp": "2026-01-14T00:31:14.112379",
+        "source": "CoinGecko"
+    },
+    {
+        "id": "BTC_USD_2026-01-14T00:32:23.338069",
+        "from_currency": "BTC",
+        "to_currency": "USD",
+        "rate": 95392.0,
+        "timestamp": "2026-01-14T00:32:23.338069",
+        "source": "CoinGecko"
+    },
+    {
+        "id": "ETH_USD_2026-01-14T00:32:23.338069",
+        "from_currency": "ETH",
+        "to_currency": "USD",
+        "rate": 3324.9,
+        "timestamp": "2026-01-14T00:32:23.338069",
+        "source": "CoinGecko"
+    },
+    {
+        "id": "SOL_USD_2026-01-14T00:32:23.338069",
+        "from_currency": "SOL",
+        "to_currency": "USD",
+        "rate": 144.78,
+        "timestamp": "2026-01-14T00:32:23.338069",
+        "source": "CoinGecko"
+    },
+    {
+        "id": "BTC_USD_2026-01-14T00:34:17.597333",
+        "from_currency": "BTC",
+        "to_currency": "USD",
+        "rate": 95335.0,
+        "timestamp": "2026-01-14T00:34:17.597333",
+        "source": "CoinGecko"
+    },
+    {
+        "id": "ETH_USD_2026-01-14T00:34:17.597333",
+        "from_currency": "ETH",
+        "to_currency": "USD",
+        "rate": 3323.11,
+        "timestamp": "2026-01-14T00:34:17.597333",
+        "source": "CoinGecko"
+    },
+    {
+        "id": "SOL_USD_2026-01-14T00:34:17.597333",
+        "from_currency": "SOL",
+        "to_currency": "USD",
+        "rate": 144.78,
+        "timestamp": "2026-01-14T00:34:17.597333",
+        "source": "CoinGecko"
+    },
+    {
+        "id": "EUR_USD_2026-01-14T00:34:18.276901",
+        "from_currency": "EUR",
+        "to_currency": "USD",
+        "rate": 1.165093790050099,
+        "timestamp": "2026-01-14T00:34:18.276901",
+        "source": "ExchangeRate-API"
+    },
+    {
+        "id": "GBP_USD_2026-01-14T00:34:18.276901",
+        "from_currency": "GBP",
+        "to_currency": "USD",
+        "rate": 1.3440860215053763,
+        "timestamp": "2026-01-14T00:34:18.276901",
+        "source": "ExchangeRate-API"
+    },
+    {
+        "id": "RUB_USD_2026-01-14T00:34:18.276901",
+        "from_currency": "RUB",
+        "to_currency": "USD",
+        "rate": 0.012685686739651652,
+        "timestamp": "2026-01-14T00:34:18.276901",
+        "source": "ExchangeRate-API"
+    }
+]
