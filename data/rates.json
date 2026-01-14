@@ -2,34 +2,34 @@
     "pairs": {
         "EUR_USD": {
             "rate": 1.165093790050099,
-            "updated_at": "2026-01-14T00:34:18.276901",
+            "updated_at": "2026-01-14T19:29:14.927706",
             "source": "ExchangeRate-API"
         },
         "BTC_USD": {
-            "rate": 95335.0,
-            "updated_at": "2026-01-14T00:34:17.597333",
+            "rate": 97396.0,
+            "updated_at": "2026-01-14T19:29:14.334052",
             "source": "CoinGecko"
         },
         "ETH_USD": {
-            "rate": 3323.11,
-            "updated_at": "2026-01-14T00:34:17.597333",
+            "rate": 3362.55,
+            "updated_at": "2026-01-14T19:29:14.334052",
             "source": "CoinGecko"
         },
         "SOL_USD": {
-            "rate": 144.78,
-            "updated_at": "2026-01-14T00:34:17.597333",
+            "rate": 146.79,
+            "updated_at": "2026-01-14T19:29:14.334052",
             "source": "CoinGecko"
         },
         "GBP_USD": {
             "rate": 1.3440860215053763,
-            "updated_at": "2026-01-14T00:34:18.276901",
+            "updated_at": "2026-01-14T19:29:14.927706",
             "source": "ExchangeRate-API"
         },
         "RUB_USD": {
             "rate": 0.012685686739651652,
-            "updated_at": "2026-01-14T00:34:18.276901",
+            "updated_at": "2026-01-14T19:29:14.927706",
             "source": "ExchangeRate-API"
         }
     },
-    "last_refresh": "2026-01-14T00:34:18.281427"
+    "last_refresh": "2026-01-14T19:29:14.960390"
 }

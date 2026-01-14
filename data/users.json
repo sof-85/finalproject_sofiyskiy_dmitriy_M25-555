@@ -5,5 +5,26 @@
         "hashed_password": "c2a14e8b083def2ef164261d0e2e584a13c75d57b3c2852927f872422fed5f7d",
         "salt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
         "registration_date": "2026-01-14T01:25:51.580869"
+    },
+    {
+        "user_id": 2,
+        "username": "tom",
+        "hashed_password": "da64c0c2ed271b39b58b52d6855be8606be49400c7791b197e272d325434b113",
+        "salt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "registration_date": "2026-01-14T21:54:02.888100"
+    },
+    {
+        "user_id": 3,
+        "username": "alice",
+        "hashed_password": "287dbf032b6e07b529cae35bc63ac905eb90e20c8d451e248b06a0c6d88c3205",
+        "salt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "registration_date": "2026-01-14T22:21:29.406864"
+    },
+    {
+        "user_id": 4,
+        "username": "user",
+        "hashed_password": "d0cf3b674a693c20497a45f9cb3798510b33dd8a9cb74bcd9c5e610c22375116",
+        "salt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "registration_date": "2026-01-14T22:25:35.127951"
     }
 ]

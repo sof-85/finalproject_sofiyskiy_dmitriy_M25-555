@@ -1,11 +1,13 @@
 # valutatrade_hub/cli/interface.py
 import shlex
+
 from ..core.currencies import _CURRENCY_REGISTRY as CURRENCY_REGISTRY
 from ..core.exceptions import ApiRequestError, CurrencyNotFoundError, InsufficientFundsError
 from ..core.usecases import SystemCore
 from ..infra.database import db_manager
 from ..parser_service.config import parser_config
 from ..parser_service.updater import RatesUpdater
+
 
 class CLI:
     '''Интерфейс программы'''
@@ -98,7 +100,7 @@ class CLI:
             user = self.core.register_user(params['username'], params['password'])
             print(f"Пользователь '{user.username}' успешно зарегистрирован (id={user.user_id}).")
             print(f'Для входа в систему используйте команду: login --username {user.username} --password <ваш_пароль>')
-            #print("Бонус 1000 USD начислен!.")
+            
         except ValueError as e:
             print(f"Ошибка регистрации: {e}")
         except Exception as e:
@@ -154,7 +156,7 @@ class CLI:
                         val_in_base = wallet.balance * (1 / rates_data[rev_pair]['rate'])
                 
                 total_val += val_in_base
-                print(f"- {code:<5}: {wallet.balance:>12.2f}  -> {val_in_base:>12.2f} {base}")
+                print(f"- {code:<5}: {wallet.balance:>12.4f}  -> {val_in_base:>12.2f} {base}")
                 
             print("-" * 50)
             print(f"ИТОГО : {total_val:>12.2f} {base}\n")
@@ -183,7 +185,7 @@ class CLI:
             
             base = self.core.settings.get('default_base_currency', 'USD')
             print(f"Покупка выполнена: {amount} {currency.upper()} по курсу {rate} {base}")
-            print(f"Изменения в портфеле:")
+            print("Изменения в портфеле:")
             print(f"Оценочная стоимость покупки:{cost:.2f} {base}")
             
         except ValueError as e:
@@ -218,7 +220,7 @@ class CLI:
             
             base = self.core.settings.get('default_base_currency', 'USD')
             print(f"Продажа выполнена: {amount} {currency.upper()} по курсу {rate} {base}/{currency.upper()}")
-            print(f"Изменения в портфеле:")
+            print("Изменения в портфеле:")
             print(f"Оценочная выручка:{revenue:.2f} {base}")
             
         except ValueError as e:
@@ -290,10 +292,10 @@ class CLI:
             updated_at = "Unknown (Legacy format)"
 
         if not rates_data:
-            print("Локальный кеш курсов пуст. Выполните 'update-rates'.")
+            print("Локальная база курсов пуста. Выполните 'update-rates'.")
             return
 
-        print(f"\nАктуальные курсы из кеша (обновлено: {updated_at}):")
+        print(f"\nАктуальные курсы (локальные, по состоянию на {updated_at}):")
         print("-" * 40)
         
         items = []
@@ -330,7 +332,7 @@ class CLI:
         sell     --currency <CODE> --amount <num>    - Продать валюту
         get-rate --from <CODE> --to <CODE>           - Получить курс пары
         update-rates [--source <name>]               - Обновить курсы из API
-        show-rates   [--currency <CODE>] [--top <N>] - Показать кеш курсов
+        show-rates   [--currency <CODE>] [--top <N>] - Показать локальную базу курсов
         exit                                         - Завершить работу
         help                                         - Показать это сообщение
         """)
